@@ -1,0 +1,29 @@
+{
+  "name": "Labs2026",
+  "dockerComposeFile": "../Dockerfiles/docker-compose.yml",
+  "service": "agentic-lab",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  "postCreateCommand": "poetry install --sync --with dev --no-root", // install deps if not already
+  "postStartCommand": "", // && poetry run pre-commit install && poetry run pre-commit install-hooks",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.isort",
+        "ms-python.flake8",
+        "ms-python.black",
+        "ms-toolsai.vscode-ai",
+        "ms-toolsai.jupyter",
+        "njpwerner.autodocstring",
+        "ms-python.black-formatter",
+        "ms-python.pylint"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "debug.internalConsoleOptions": "neverOpen"
+      }
+    }
+  }
+}
