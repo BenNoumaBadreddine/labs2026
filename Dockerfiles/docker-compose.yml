@@ -1,0 +1,16 @@
+name: labs2026
+services:
+  agentic-lab:
+    image: labs2026-agentic:latest
+    # Build from the Dockerfile in this repo.
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: labs2026-agentic
+    volumes:
+      # Keep the host code in sync with the container.
+      - ..:/workspace:delegated
+    env_file:
+      - ../.devcontainer/devcontainer.env
+volumes:
+  venv:

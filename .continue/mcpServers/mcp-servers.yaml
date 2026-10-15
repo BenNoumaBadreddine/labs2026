@@ -1,0 +1,47 @@
+name: MCP servers list
+version: 0.0.1
+schema: v1
+
+mcpServers:
+  - name: MCP server for Filesystem
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"
+    env: {}
+
+  - name: MCP server for playwright BROWSER SEARCH
+    command: npx
+    args:
+      - "@playwright/mcp@latest"
+    default: /bin/bash
+    cwd: /
+    env:
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+    timeout: 60
+    maxOutput: 1048576
+    spawnOptions:
+      stdio:
+        - ignore
+        - pipe
+        - pipe
+      detached: false
+
+  - name: "Memory MCP"
+    version: "0.0.1"
+    schema: "v1"
+    command: "npx"
+    args: 
+        - "-y"
+        - "@modelcontextprotocol/server-memory"
+    env: {}
+
+  - name: GitHub
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-github"
+    env: {}
+
+

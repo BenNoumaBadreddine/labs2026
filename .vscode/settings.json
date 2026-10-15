@@ -1,0 +1,44 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:poetry",
+    "python-envs.defaultPackageManager": "ms-python.python:poetry",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "src",
+        "--cov=./src",
+        "--cov-config=./.coveragerc"
+    ],
+    "pylint.enabled": true,
+    "pylint.importStrategy": "fromEnvironment",
+    "pylint.args": [
+        "--rcfile=.pylintrc"
+    ],
+    "black-formatter.args": [
+        "--config=pyproject.toml"
+    ],
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.exclude": [
+        ".venv/**",
+        "notebooks/**"
+    ],
+    "python.analysis.aiCodeActions": {
+        "implementAbstractClasses": true,
+        "generateDocstring": true,
+        "convertLambdaToNamedFunction": true,
+        "convertFormatString": true
+    },
+    "python.analysis.enablePytestSupport": true,
+    "files.exclude": {
+        "**/__pycache__": true
+    }
+}
